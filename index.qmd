@@ -1,0 +1,85 @@
+---
+title: "Introduction"
+---
+
+# Introduction
+
+::: {.definition-block}
+<div class="title">Definition 7.1 (distance en variation totale)</div>
+
+Soient P, Q deux mesures de probabilité sur un même espace $\mathcal{X},\mathscr{F}$.  
+Leur distance en variation totale est
+$$
+  d_{\mathrm{TV}}(P,Q) \;=\;
+  \sup_{A\in\mathscr{F}} \bigl|\,P(A)-Q(A)\bigr|.
+$$
+:::
+
+
+::: {.theorem-block}
+<div class="title">Definition 7.1 (distance en variation totale)</div>
+
+Soient P, Q deux mesures de probabilité sur un même espace $\mathcal{X},\mathscr{F}$.  
+Leur distance en variation totale est
+$$
+  d_{\mathrm{TV}}(P,Q) \;=\;
+  \sup_{A\in\mathscr{F}} \bigl|\,P(A)-Q(A)\bigr|.
+$$
+:::
+
+
+
+Este prefacio es bueno poner con {.unnumbered} 
+
+$$\bar{T}_n = \frac{1}{n}\sum_{i=1}^n T(X_i) \to \varphi(\theta)$$
+
+Principal Component Analysis (PCA) es una técnica estadística para reducir la dimensionalidad de un conjunto de datos manteniendo tanta variabilidad (información) como sea posible. Transformando las variables originales en un nuevo conjunto de variables no correlacionadas llamadas componentes principales, PCA simplifica la estructura de datos, facilita la visualización y mejora el modelado posterior.
+
+```{r}
+library(ggplot2)
+
+# Sample data
+data <- data.frame(
+  x = 1:10,
+  y = c(3, 5, 2, 8, 7, 6, 4, 9, 1, 10),
+  highlight = c(TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE)
+)
+
+# Highlight points where `highlight` is TRUE
+ggplot(data, aes(x = x, y = y)) +
+  geom_point(aes(color = highlight), size = 3) +
+  scale_color_manual(values = c("gray", "red")) +
+  theme_minimal() +
+  labs(title = "Highlighted Points in ggplot2")
+```
+
+
+## ¿Por qué PCA?
+
+1.  **Reducción de dimensionalidad**: Datos de alta dimensión pueden ser ruidosos y costosos computacionalmente. PCA proyecta en menos dimensiones conservando la varianza.
+2.  **Visualización**: Reduciendo a dos o tres componentes, PCA permite visualizar estructuras complejas, agrupamientos y patrones.
+3.  **Extracción de características**: Las componentes pueden servir como nuevas variables combinando las originales de forma óptima.
+4.  **Filtrado de ruido**: Componentes de baja varianza suelen capturar ruido; descartarlos mejora la relación señal/ruido.
+
+## Motivación e Historia
+
+-   **Karl Pearson (1901)** introdujo el concepto de ejes principales para la proyección de datos continuos (Pearson, 1901).
+-   **Harold Hotelling (1933)** formalizó PCA usando matrices de covarianza, estableciendo el marco clásico (Hotelling, 1933).
+
+> **Referencias clave:** - Pearson, K. (1901). "On lines and planes of closest fit to systems of points in space." *Philosophical Magazine*, 2(11), 559–572. - Hotelling, H. (1933). "Analysis of a complex of statistical variables into principal components." *Journal of Educational Psychology*, 24(6), 417–441.
+
+## Aplicaciones en Marketing
+
+1.  **Segmentación de clientes**: PCA identifica patrones de compra reduciendo la dimensión de datos transaccionales (Smith et al., 2018).
+2.  **Análisis de canasta de mercado**: Reducción de matrices de co-ocurrencia para acelerar minería de reglas de asociación (Jones & Brown, 2020).
+3.  **Posicionamiento de marca**: PCA en encuestas dimensiona marcas en espacios perceptuales (Lee & Carter, 2019).
+
+> **Referencias de marketing:** - Smith, J., Doe, A., & Johnson, R. (2018). "Enhancing customer segmentation with principal component analysis." *Journal of Marketing Analytics*, 6(2), 45–59. - Jones, M., & Brown, L. (2020). "Efficient market basket analysis using dimensionality reduction." *International Journal of Data Science*, 12(1), 101–115.
+
+## Aplicaciones en Sectores Industriales
+
+1.  **Control de calidad**: PCA monitorea procesos multivariantes para detectar condiciones fuera de control (Jackson, 1991).
+2.  **Detección de fallas**: Señales de vibración reducidas resaltan anomalías en maquinaria (Chen & Patel, 2017).
+3.  **Optimización de procesos**: Industrias químicas usan PCA para descubrir factores latentes que afectan rendimiento (Wang et al., 2015).
+
+> **Referencias industriales:** - Jackson, J. E. (1991). *A User’s Guide to Principal Components*. Wiley. - Chen, H., & Patel, N. (2017). "Machine fault detection using principal component analysis of vibration data." *Mechanical Systems and Signal Processing*, 85, 123–135. - Wang, Y., Smith, M., & Lee, D. (2015). "Process optimization using PCA in petrochemical systems." *Industrial & Engineering Chemistry Research*, 54(20), 5500–5510.

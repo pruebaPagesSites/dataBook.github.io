@@ -1,0 +1,24 @@
+/* styles.css */
+.definition-block {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1.5em 0;
+}
+.definition-block .title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.theorem-block {
+  background-color: #DAFEFE;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1.5em 0;
+}
+.theorem-block .title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}

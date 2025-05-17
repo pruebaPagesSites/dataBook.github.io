@@ -1,0 +1,106 @@
+project:
+  type: book
+
+book:
+  
+  title: "Principal Component Analysis and Its Applications"
+  author: "Tu Nombre"
+  date: "`r format(Sys.Date(), '%B %d, %Y')`"
+  # barra de navegacion superior
+  #navbar:
+  #  search: true
+  
+  # Botones sobre el panel izquierdo de navegacion
+  # Boton de busqueda dentro del documento
+  search: true
+  # direccion del repositorio
+  repo-url: https://github.com/jjallaire/hopr/
+  # Edit button for github
+  # repo-actions: [edit]
+  # Boton para descargar el pdf, se tiene que tener el pdf
+  downloads: [pdf, epub]
+  # Boton para compartir
+  sharing: [twitter, facebook]
+  
+  # Side bar - panel izquierdo personalizable
+  # https://quarto.org/docs/websites/website-navigation.html#side-navigation
+  sidebar:
+    #style: docked
+    background: light
+    logo: logo.jpg
+  
+  # cover-image: logo.jpg
+  
+  chapters: 
+    - index.qmd
+    - chapter1.qmd
+    - part: part1.qmd
+      chapters: 
+        - chapter2.qmd
+    - part: part2.qmd
+      chapters:
+        - chapter3.qmd
+    - part: part3.qmd
+      chapters:
+        - chapter4.qmd
+  page-footer: 
+    left: "Copyright 2021, Norah Jones" 
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: twitter 
+        href: https://twitter.com/
+    
+    border: false
+    background: light
+  
+  # Faltan los 3
+  # Icono para la pestaña de navegacion
+  favicon: logo.jpg
+  twitter-card: true
+  site-url: https://example.com
+
+# Formato del codigo
+highlight-style: github
+    
+format:
+  html:
+    image: "https://quarto.org/quarto-dark-bg.jpeg"
+    
+    # On ssas variables https://quarto.org/docs/output-formats/html-themes.html
+    theme: 
+      light: lux  
+      dark: darkly
+    #fontsize: 1.1em
+    #linestretch: 1.7
+    css: styles.css
+    respect-user-color-scheme: true
+    toc: true
+    toc-depth: 2
+    
+  pdf:
+    documentclass: book
+    toc: true
+    toc-depth: 2
+    include-in-header:
+      text: |
+        \usepackage{mdframed}
+        \newmdenv[
+          backgroundcolor=gray!10,
+          linecolor=gray!40,
+          roundcorner=4pt,
+          innertopmargin=6pt,
+          innerbottommargin=6pt
+        ]{defn}
+        \usepackage{imakeidx}
+        \makeindex[intoc=true, columns=3, columnseprule=true, options=-s latex/indexstyles.ist]
+    include-after-body: 
+      text: |
+        \printindex
+
+execute:
+  echo: true
+  warning: false
+  message: false
+
+editor: visual

@@ -1,0 +1,10 @@
+---
+title: "Parte 2 usando comando - - - "
+---
+# Parte 2 titulo usando numeral
+
+No hay enumeracion para titulo cuando usamos part: 
+
+## subtitulo parte 2
+
+No hay enumeracion para subtitulo cuando usamos part: 
