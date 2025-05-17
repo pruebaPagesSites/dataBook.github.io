@@ -36,6 +36,7 @@ $$\bar{T}_n = \frac{1}{n}\sum_{i=1}^n T(X_i) \to \varphi(\theta)$$
 Principal Component Analysis (PCA) es una técnica estadística para reducir la dimensionalidad de un conjunto de datos manteniendo tanta variabilidad (información) como sea posible. Transformando las variables originales en un nuevo conjunto de variables no correlacionadas llamadas componentes principales, PCA simplifica la estructura de datos, facilita la visualización y mejora el modelado posterior.
 
 ```{r}
+install.packages("ggplot2")
 library(ggplot2)
 
 # Sample data
