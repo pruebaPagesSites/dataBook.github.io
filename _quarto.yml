@@ -84,17 +84,9 @@ format:
     toc-depth: 2
     include-in-header:
       text: |
-        \usepackage{mdframed}
-        \newmdenv[
-          backgroundcolor=gray!10,
-          linecolor=gray!40,
-          roundcorner=4pt,
-          innertopmargin=6pt,
-          innerbottommargin=6pt
-        ]{defn}
         \usepackage{imakeidx}
         \makeindex[intoc=true, columns=3, columnseprule=true, options=-s latex/indexstyles.ist]
-    include-after-body: 
+    include-after-body:
       text: |
         \printindex
 

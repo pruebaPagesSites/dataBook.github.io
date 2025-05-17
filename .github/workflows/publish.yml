@@ -26,7 +26,25 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
+      
+      # Install TeX Live via apt
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra
 
+      # Install Quarto CLI
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # Render your book
+      - name: Render PDF
+        run: quarto render
+      
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
